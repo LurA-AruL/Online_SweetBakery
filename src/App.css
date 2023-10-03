@@ -276,6 +276,11 @@ input:focus
 }
 
 
+/* --------------------whatsApp order buttons-------------- */
+.whatsappBtn{
+  background-color: var(--main-bg-color) !important;
+}
+
 /* button categories */
 
 @media only screen  and (max-width:992px) and (min-width:0) {
@@ -304,7 +309,7 @@ input:focus
   .NavBarFooter{
     position: fixed;
     width: 100% !important;
-    min-height: 50px !important;
+    min-height: 60px !important;
     z-index: 4;
     top: 93%;
   }
@@ -318,8 +323,8 @@ input:focus
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 10px 0px;
     background-color:rgba(255, 255, 255, 0.892) !important;
-    padding: 5px 0px;
     border-top-left-radius: 10px !important;
     border-top-right-radius: 10px !important;
   }
