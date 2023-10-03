@@ -277,10 +277,14 @@ input:focus
 
 
 /* --------------------whatsApp order buttons-------------- */
-.whatsappBtn{
+.whatsappBtns{
+  color: white !important;
   background-color: var(--main-bg-color) !important;
 }
-
+.whatsappBtns:hover{
+  color: white !important;
+  background-color:rgb(231, 197, 10) !important;
+}
 /* button categories */
 
 @media only screen  and (max-width:992px) and (min-width:0) {

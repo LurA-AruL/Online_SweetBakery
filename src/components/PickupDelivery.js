@@ -169,11 +169,11 @@ ${deliveryDetails}
 
 
                 <div className="form-group sticky-lg-bottom d-none d-lg-block">
-                    <button type="submit" className="btn border w-100 bg-warning whatsappBtn "><i className="bi bi-whatsapp px-2 text-success"></i>Place an Order</button>
+                    <button type="submit" className="btn border w-100  whatsappBtn "><i className="bi bi-whatsapp px-2 text-success"></i>Place an Order</button>
                 </div>
                 <div className="form-group fixed-bottom d-sm-none d-flex border-top p-2">
                     <div className="w-25 p-2 fw-bold d-flex align-items-center">Total <span className=" ps-2 fw-normal">{formattedAmount}</span></div>
-                    <div className="w-75 text-end p-2"><button type="submit" className="btn border bg-warning whatsappBtn "><i className="bi bi-whatsapp px-2 text-success"></i>Place an Order</button></div>
+                    <div className="w-75 text-end p-2"><button type="submit" className="btn border whatsappBtn "><i className="bi bi-whatsapp px-2 text-success"></i>Place an Order</button></div>
                 </div>
             </form>
         </div>

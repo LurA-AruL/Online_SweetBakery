@@ -33,13 +33,13 @@
 /* plubtn */
 
 .plubtn{
-    background-color: var(--main-bg-color) !important;
+    background-color: rgb(225, 192, 3) !important;
     font-size: 12pt !important;
     
   }
   .plubtn:hover{
     transition: all 0.5s;
-    background-color: rgb(82, 37, 6,0.9) !important;
+    background-color: gold !important;
     color: white !important;
   }
 

@@ -256,7 +256,7 @@ const updateCart = (updatedCart) => {
                             <div className='d-flex  row asideBg_color_footer_inner'>
                               <div className='col-12 py-2'><p className="w-100 fw-bold ps-2 d-flex justify-content-between"><span>Total Items</span><span className='fontGold pe-2'>{cart.length}</span></p></div>
                               <div className='col-12 py-2 '><p className="w-100 pt-2 fw-bold ps-2 d-flex justify-content-between"><span>Total Amount</span><span className='fontGold pe-2'>{formattedAmount}</span></p></div>
-                              <div className='col-12 my-2 text-center'><button type="submit" className="btn w-100 border whatsappBtn " data-bs-toggle="modal" data-bs-target="#HomeOrderOnWhatsapp"><i className="bi bi-whatsapp pe-2 text-success"></i>Order on Whatsapp</button></div>  
+                              <div className='col-12 my-2 text-center'><button type="submit" className="btn w-100 border whatsappBtns " data-bs-toggle="modal" data-bs-target="#HomeOrderOnWhatsapp"><i className="bi bi-whatsapp pe-2 text-success"></i>Order on Whatsapp</button></div>  
                               </div>
               </div>
                 : <></> }

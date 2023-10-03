@@ -47,6 +47,7 @@
 
     .whatsappBtn{
         /* background-color: var(--main-bg-color) !important; */
+        background-color: var(--main-bg-color) !important;
         font-weight: 600 !important;
         color: white !important;
     }
