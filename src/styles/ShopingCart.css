@@ -155,7 +155,7 @@
   }
   /*--------------------------- upArrow Modal Button------------------------ */
   .upArrowModalBtn{
-    font-size: 6pt;
+    font-size: 8pt;
   }
   .upArrowModalBtn:hover{
     color: rgb(255, 186, 67) !important;

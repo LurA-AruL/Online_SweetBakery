@@ -33,7 +33,12 @@ function ShoppingCart({Cartdetails,removeFromCart,addToCart,formattedAmountSendT
 
     //--------------------------------- Axois Api key  -----------------------
     const [apiData, setApiData] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
+    const [isLoadingPage, setIsLoadingPage] = useState(true);
+
+    // ------------------------ changing categeries values ----------------
+    
+    const [changeApiCount,SetChangeApiCount] = useState(5);
+    
 
 
     useEffect(() => {
@@ -42,17 +47,24 @@ function ShoppingCart({Cartdetails,removeFromCart,addToCart,formattedAmountSendT
          inputvalueGetFun(); 
         //  ------------------------------Api get Method---------------------
           fetchData();
-     }, [Cartdetails,itemsSearchValue]);
+     }, [Cartdetails,itemsSearchValue,changeApiCount]);
+     
 
+     const handleCategries = (event) => {
+        SetChangeApiCount(event);
+     }
 
   //  ---------------------------------- Fetch Api Axois Methods -------------------------
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('https://srivenkateshwarasweets.in/wp-json/wc/v3/products?page=2&consumer_key=ck_b31cbf4a99a70c0c02f682eeae469b7cbfc774c0&consumer_secret=cs_0d51924fb90c2a413674ca4bd37d54955178f2f9');
+
+      const response = await axios.get(`https://srivenkateshwarasweets.in/wp-json/wc/v3/products?page=${changeApiCount}&consumer_key=ck_b31cbf4a99a70c0c02f682eeae469b7cbfc774c0&consumer_secret=cs_0d51924fb90c2a413674ca4bd37d54955178f2f9`);
       setApiData(response.data);
-      setIsLoading(false);
+      setIsLoadingPage(false);
+
     } catch (error) {
+
       console.error('Error fetching data:', error);
       // Handle errors here
     }
@@ -67,11 +79,11 @@ function ShoppingCart({Cartdetails,removeFromCart,addToCart,formattedAmountSendT
      }
 
     //  ----------------------modal close automatically -----------------------
-    const modalCloseAutomatically = () => {
-      if(cart.length === 0){
-        alert("hai your cart is zero");
-      }
-    }
+    // const modalCloseAutomatically = () => {
+    //   if(cart.length === 0){
+    //     alert("hai your cart is zero");
+    //   }
+    // }
      
 
     console.log(apiData.map(e => e),"asdjbhgdgvsdiomoldsbhgu");
@@ -100,24 +112,26 @@ function ShoppingCart({Cartdetails,removeFromCart,addToCart,formattedAmountSendT
 
             {/*-------------------------- Button scroll mobile view  -----------------------------*/}
             <div className="slider-container position-sticky top-0 d-md-none">
-               <div className="slider-item "><button type='button' className='btn w-100 btn_menu border px-1 px-sm-4 ' onClick={(e) => e}>Celebration Cakes</button></div>
-               <div className="slider-item "><button type='button' className='btn w-100 btn_menu border px-1 px-sm-4 ' onClick={(e) => e}>Chocolate Truffle Cakes</button></div>
-               <div className="slider-item "><button type='button' className='btn w-100 btn_menu border px-1 px-sm-4 ' onClick={(e) => e}>Single Pastries</button></div>
-               <div className="slider-item "><button type='button' className='btn w-100 btn_menu border px-1 px-sm-4 ' onClick={(e) => e}>Chocolate Gift Boxes</button></div>
-               <div className="slider-item "><button type='button' className='btn w-100 btn_menu border px-1 px-sm-4 ' onClick={(e) => e}>Chocolate Bars</button></div>
+               <div className="slider-item "><button type='button' className='btn w-100 btn_menu border px-1 px-sm-4 ' onClick={(e) => handleCategries(2)}>OUR CRUNCHY SAVOURIES</button></div>
+               <div className="slider-item "><button type='button' className='btn w-100 btn_menu border px-1 px-sm-4 ' onClick={(e) => handleCategries(3)}>TOP SELLING SWEETS </button></div>
+               <div className="slider-item "><button type='button' className='btn w-100 btn_menu border px-1 px-sm-4 ' onClick={(e) => handleCategries(10)}>BIRTHDAY CAKES</button></div>
+               <div className="slider-item "><button type='button' className='btn w-100 btn_menu border px-1 px-sm-4 ' onClick={(e) => handleCategries(7)}>Sweets</button></div>
+               <div className="slider-item "><button type='button' className='btn w-100 btn_menu border px-1 px-sm-4 ' onClick={(e) => handleCategries(6)}>Gift Packs</button></div>
                {/* Add more slider items as needed */}
             </div>
 
+            {/*-------------------------- desktop view  -----------------------------*/}
             
             <div className=' d-none d-lg-block py-2' >
               <div className=' d-flex flex-wrap gap-4' >
-                <button type='button' className='btn btn_menu border px-2 px-sm-4 ' onClick={(e) => e}>Celebration Cakes</button>
-                <button type='button' className='btn btn_menu border px-2 px-sm-4 ' onClick={(e) => e}>Chocolate Truffle Cakes</button>
-                <button type='button' className='btn btn_menu border px-2 px-sm-4 ' onClick={(e) => e}>Single Pastries</button>
-                <button type='button' className='btn btn_menu border px-2 px-sm-4 ' onClick={(e) => e}>Chocolate Gift Boxes</button>
-                <button type='button' className='btn btn_menu border px-2 px-sm-4 ' onClick={(e) => e}>Chocolate Bars</button>
+                <button type='button' className='btn btn_menu border px-2 px-sm-4 ' onClick={(e) => handleCategries(2)}>OUR CRUNCHY SAVOURIES</button>
+                <button type='button' className='btn btn_menu border px-2 px-sm-4 ' onClick={(e) => handleCategries(3)}>TOP SELLING SWEETS </button>
+                <button type='button' className='btn btn_menu border px-2 px-sm-4 ' onClick={(e) => handleCategries(10)}>BIRTHDAY CAKES</button>
+                <button type='button' className='btn btn_menu border px-2 px-sm-4 ' onClick={(e) => handleCategries(7)}>Sweets</button>
+                <button type='button' className='btn btn_menu border px-2 px-sm-4 ' onClick={(e) => handleCategries(6)}>Gift Packs</button>
               </div>
             </div>
+            
           </div>
 
           {/* -----------------------button end----------------------- */}
@@ -144,7 +158,7 @@ function ShoppingCart({Cartdetails,removeFromCart,addToCart,formattedAmountSendT
                 )) 
                 : 
 
-                isLoading ? (
+                isLoadingPage ? (
                   <SkeletonCard />
                 ) : (
                  

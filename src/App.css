@@ -6,7 +6,7 @@ html,body{
 }
 :root {
   --main-bg-color:  purple;  /* Define a global background color variable */
-  --text-color: yellow;
+  --text-color: purple;
   ; /* Define a global text color variable */
 }
 
