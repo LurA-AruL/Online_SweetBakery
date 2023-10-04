@@ -116,12 +116,12 @@ export default function Cart({cartreciveFun}) {
       </div> :
 
       <div className='row w-100'>
-        <div className='col-lg-8 d-none d-lg-block'><Delivery /></div>
+        <div className='col-lg-8 d-none d-lg-block text-center'><div className='w-75  m-auto'><Delivery /></div></div>
         <div className='col-12 col-lg-4 position-relative'>
         <div className='d-flex flex-column px-3 overflow-auto cartAreaItems pt-4'>
                 {/* {cart.length} */}
                 {getData.map((e, index) => (
-                    <div className="card border-0 mb-2 cartAreaItemsOuter " style={{ maxWidth: 350 + "px" }} key={index}>
+                    <div className="card border-0 mb-2 cartAreaItemsOuter " style={{ maxWidth: 100 + "%" }} key={index}>
                       <div className="row px-3 cartAreaItemsInner">
                         <div className="col-md-4 col-4 rounded text-start cartAreaItemsOuter_div p-0" >
                           <img src={e.item_image} className="img-fluid rounded cartAreaItemsOuter_img" alt="no image found" />
