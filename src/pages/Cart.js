@@ -119,6 +119,7 @@ export default function Cart({cartreciveFun}) {
         <div className='col-lg-8 d-none d-lg-block '><div className='w-75  m-auto'><Delivery /></div></div>
         <div className='col-12 col-lg-4 position-relative'>
         <div className='d-flex flex-column px-3 overflow-auto cartAreaItems pt-4'>
+        <div className='my-order w-100 fs-6 fw-bold ps-4 py-3 d-flex align-items-center'><div className='OrderOption'><img src='assests/ordericon.png' className='w-100' alt='no image found' /></div><div className='ps-1'>Your Order</div></div>
                 {/* {cart.length} */}
                 {getData.map((e, index) => (
                     <div className="card border-0 mb-2 cartAreaItemsOuter " style={{ maxWidth: 100 + "%" }} key={index}>

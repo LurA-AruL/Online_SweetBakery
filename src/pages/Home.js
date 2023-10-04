@@ -122,7 +122,7 @@ const updateCart = (updatedCart) => {
       const updatedCart = [...cart, { ...item, item_qty: 1 }];
       updateCart(updatedCart);
     }
-    handleClick();
+    // handleClick();
 
   };
 
