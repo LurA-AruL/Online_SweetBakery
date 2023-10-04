@@ -93,8 +93,8 @@ export default function Cart({cartreciveFun}) {
       </div> :
 
       <div className='row w-100'>
-        <div className='col-8'><Delivery /></div>
-        <div className='col-4 position-relative'>
+        <div className='col-lg-8 d-none d-lg-block'><Delivery /></div>
+        <div className='col-12 col-lg-4 position-relative'>
         <div className='d-flex flex-column px-3 overflow-auto cartAreaItems pt-4'>
                 {/* {cart.length} */}
                 {getData.map((e, index) => (
