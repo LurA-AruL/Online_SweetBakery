@@ -1,0 +1,12 @@
+.cartsWrapper{
+    display: flex;
+    flex-direction: row;
+}
+.cartFooterWrapper{
+    height: 11vh;
+    color: white;
+    background-color: var(--main-bg-color);
+}
+.cartAreaItems{
+    height: 89vh;
+}

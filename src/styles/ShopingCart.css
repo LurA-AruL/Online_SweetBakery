@@ -178,6 +178,9 @@
   .items{
     font-size: 7pt;
   }
+  .items_Animation{
+    transition: all 2s linear;
+  }
   .footerCartrMb_OrdeBtn{
     color: rgba(60, 250, 50, 0.93) !important;
     background-color: white !important;

@@ -129,7 +129,7 @@ _Kindly confirm the above details to proceed with your order_ 👆`;
 
   return (
     <div className="container position-realtive">
-      <form onSubmit={handleSubmit} className="pt-3" >
+      <form onSubmit={handleSubmit} className="pt-3 m-0" >
         
         <div className="d-flex flex-column gap-3">
         <div className="form-group">

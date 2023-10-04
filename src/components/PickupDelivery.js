@@ -124,8 +124,8 @@ ${deliveryDetails}
     };
 
     return (
-        <div className="container Delivery_OuterWrapper">
-            <form onSubmit={handleSubmit} className="d-flex flex-column gap-3 pt-3 position-relative">
+        <div className="container Delivery_OuterWrapper  ">
+            <form onSubmit={handleSubmit} className="d-flex flex-column gap-3 pt-3 position-relative m-0">
                 <div className="form-group">
                     <label htmlFor="name" className="font_Headers">Name:</label>
                     <input

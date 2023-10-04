@@ -287,6 +287,23 @@ input:focus
 }
 /* button categories */
 
+
+
+/* trying css animation carts effects */
+
+.clickable-element {
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Add a smooth transition effect */
+}
+
+.clickable-element.active {
+  background-color: #2980b9; /* Change the background color on click */
+}
+
 @media only screen  and (max-width:992px) and (min-width:0) {
 
   /*--------------------------- home Main Div----------------------- */

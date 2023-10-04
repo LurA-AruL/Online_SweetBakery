@@ -284,7 +284,7 @@ function ShoppingCart({Cartdetails,removeFromCart,addToCart,formattedAmountSendT
             <div className='container footerCartrMb rounded position-fixed d-lg-none'>
                   <div className='row text-white p-2 footerCartrMb_TotalAmount'>
                     <div className='col-5 d-flex  flex-column g-1 '>
-                      <div className='fw-bold items'><span>{cart.length} {cart.length > 1 ? "Items" : "Item"} </span><i data-bs-toggle="modal" data-bs-target="#staticBackdrop" className="bi bi-chevron-up upArrowModalBtn front_corsur text-white"></i></div>
+                      <div className='fw-bold items'><span className='items_Animation'>{cart.length} {cart.length > 1 ? "Items" : "Item"} </span><i data-bs-toggle="modal" data-bs-target="#staticBackdrop" className="bi bi-chevron-up upArrowModalBtn front_corsur text-white"></i></div>
                       <div className='fw-bold'>Total: {formattedAmountSendToMb}</div>
                     </div>
                     {/* <div className='col-3 ps-1 text-end position-relative'>View<span className="position-absolute top-0 start-100 translate-middle badge rounded bg-white text-dark badge_footerMb">{cart.length}</span></div> */}

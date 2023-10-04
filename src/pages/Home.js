@@ -6,7 +6,7 @@ import axios from 'axios';
 
 
 
-export default function Home(props) {
+export default function Home({inputRef}) {
 
   // const api = "http://localhost:5000/comments";
 
@@ -20,6 +20,9 @@ export default function Home(props) {
 
   //--------------- search button refference-----------------
   // const inputRef = useRef(null);
+
+  // -------------------- add to carts animation in css -----------------------
+    const [isClicked, setIsClicked] = useState(false);
 
   useEffect(() => {
     // Load the cart from localStorage when the component mounts
@@ -37,12 +40,20 @@ export default function Home(props) {
         
         setApiData(response.data);
       } catch (error) {
+
         console.error('Error fetching data:', error);
         // Handle errors here
       }
     };
   
-    // ----------------------------------- Fetch Api Axois Methods --------------------------
+    // -------------------- add to carts animation in css -----------------------
+    const handleClick = () => {
+      // Handle the click event here
+      setIsClicked(true);
+  
+      // Perform other actions if needed
+      alert('Button clicked!');
+    };
   
   // ------------------ filter carts items -----------------------
   const handleSearch = (event) => {
@@ -53,18 +64,19 @@ export default function Home(props) {
     // const filtered = biriyanilist.filter(item =>
     //   item.title.toLowerCase().includes(inputvalueGet.toLowerCase())
     // );
-    
-    console.log(itemsSearch,'input value') 
 
     setFilteredData(filtered);
-    console.log(filtered,"filter data from parent");
 
   }; 
+
+  //-------------------------------- increase cart values 
+
+
+
 
   //  ------------------------------ Adding Cart Total Amount and values --------------------------------------
 
   function sumTotal(arrNumber) {
-
     return arrNumber.reduce((acc, currentValue) => acc + currentValue, 0);
 
   }
@@ -86,6 +98,8 @@ const updateCart = (updatedCart) => {
   setCart(updatedCart);
   // Update the cart in localStorage
   localStorage.setItem('cart', JSON.stringify(updatedCart));
+
+  // cart value increase
 };
 
   // ---------------------------------- Aside and Main Carts items Adding function here --------------------------------
@@ -103,6 +117,7 @@ const updateCart = (updatedCart) => {
       const updatedCart = [...cart, { ...item, item_qty: 1 }];
       updateCart(updatedCart);
     }
+    handleClick();
   };
 
   // ---------------------------------- Aside Carts items Removing function here --------------------------------   
@@ -124,6 +139,8 @@ const updateCart = (updatedCart) => {
     }
   };
 
+ 
+
   
   return (
     <>
@@ -136,7 +153,7 @@ const updateCart = (updatedCart) => {
             </div>
             <div className='col-9 col-md-10 px-lg-2 pe-3' >
               {/* <p className=' mb-1 text-center text-lg-start font-monospace text-muted promotionText'><i class="bi bi-emoji-smile-upside-down text-warning"></i> Freshly Cooked, Always Delicious!</p> */}
-              <input  ref={props.inputRef} className="form-control p-lg-2 rounded-pill" name={itemsSearch} onChange={((e) => handleSearch(e.target.value))} type="search" placeholder="What would you like to eat?" id="example-search-input" />
+              <input  ref={inputRef} className="form-control p-lg-2 rounded-pill" name={itemsSearch} onChange={((e) => handleSearch(e.target.value))} type="search" placeholder="What would you like to eat?" id="example-search-input" />
             </div>
             {/* <div className='col-1 col-md-2'>
               <i className="bi bi-filter front_corsur filler_icon" ></i>
@@ -254,7 +271,7 @@ const updateCart = (updatedCart) => {
                   
               <div className='position-fixed bottom-0 asideBg_color_footer'>
                             <div className='d-flex  row asideBg_color_footer_inner'>
-                              <div className='col-12 py-2'><p className="w-100 fw-bold ps-2 d-flex justify-content-between"><span>Total Items</span><span className='fontGold pe-2'>{cart.length}</span></p></div>
+                              <div className='col-12 py-2'><p className="w-100 fw-bold ps-2 d-flex justify-content-between " ><span>Total Items</span><span className='fontGold pe-2'>{cart.length}</span></p></div>
                               <div className='col-12 py-2 '><p className="w-100 pt-2 fw-bold ps-2 d-flex justify-content-between"><span>Total Amount</span><span className='fontGold pe-2'>{formattedAmount}</span></p></div>
                               <div className='col-12 my-2 text-center'><button type="submit" className="btn w-100 border whatsappBtns " data-bs-toggle="modal" data-bs-target="#HomeOrderOnWhatsapp"><i className="bi bi-whatsapp pe-2 text-success"></i>Order on Whatsapp</button></div>  
                               </div>
