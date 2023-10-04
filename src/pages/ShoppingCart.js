@@ -16,7 +16,7 @@ import SkeletonCard from '../components/SkeletonCard';
 
 
 
-function ShoppingCart({Cartdetails,removeFromCart,addToCart,formattedAmountSendToMb,filteredData,itemsSearchValue}) {
+function ShoppingCart({Cartdetails,removeFromCart,addToCart,formattedAmountSendToMb,filteredData,itemsSearchValue,buttonText}) {
 
     const [cart, setCart] = useState(Cartdetails);
     // const [cartList, setCartList] = useState(mutton_Dishes);
@@ -38,6 +38,9 @@ function ShoppingCart({Cartdetails,removeFromCart,addToCart,formattedAmountSendT
     // ------------------------ changing categeries values ----------------
     
     const [changeApiCount,SetChangeApiCount] = useState(5);
+
+   
+
     
 
 
@@ -75,7 +78,7 @@ function ShoppingCart({Cartdetails,removeFromCart,addToCart,formattedAmountSendT
      // ------------------------- Modal view and hide automatically -------------------
      const inputvalueGetFun = () =>{
         setFilteredDatas(filteredData);
-        console.log(filteredData,"check value is there");
+        // console.log(filteredData,"check value is there");
      }
 
     //  ----------------------modal close automatically -----------------------
@@ -86,7 +89,7 @@ function ShoppingCart({Cartdetails,removeFromCart,addToCart,formattedAmountSendT
     // }
      
 
-    console.log(apiData.map(e => e),"asdjbhgdgvsdiomoldsbhgu");
+    // console.log(apiData.map(e => e),"asdjbhgdgvsdiomoldsbhgu");
     
 
     return (
@@ -162,7 +165,7 @@ function ShoppingCart({Cartdetails,removeFromCart,addToCart,formattedAmountSendT
                   <SkeletonCard />
                 ) : (
                  
-                  apiData.map((currentData) => (
+                  apiData.map((currentData,index) => (
                     <div className="card col-1 my-lg-1 cardOuterWrapper" style={{ width: 17 + "rem" }} key={currentData.id}>
                       <div className='ImageWrapper'>
                           <div className='ImageInner'>
@@ -171,7 +174,7 @@ function ShoppingCart({Cartdetails,removeFromCart,addToCart,formattedAmountSendT
                           </div>
                       </div>
                       <div className="card-body px-0">
-                          <div className='d-flex justify-content-between'><div className='d-flex flex-column px-2'><h5 className="Shoping_cartTitle card-title p-0 m-0">{currentData.name}</h5><span className='CartPriceHome pt-1'>{currentData.price ? "Price: "+ currentData.price : <></>}</span><span className='CartPriceHome text-decoration-line-through'>{currentData.regular_price ? "Regular Price: " + currentData.regular_price :<></>}</span></div> <div className='pe-2'><button id='AddBtn' className='btn border fw-bold plubtn d-inline px-3 px-lg-3 text-white' onClick={(e) => addToCart({ item_id: currentData.id, item_name: currentData.name, item_price: currentData.price, item_qty: currentData.qty, item_image: currentData.images.map(e => e.src), event: e.target.id })}>Add</button></div></div>
+                          <div className='d-flex justify-content-between'><div className='d-flex flex-column px-2'><h5 className="Shoping_cartTitle card-title p-0 m-0">{currentData.name}</h5><span className='CartPriceHome pt-1'>{currentData.price ? "Price: "+ currentData.price : <></>}</span><span className='CartPriceHome text-decoration-line-through'>{currentData.regular_price ? "Regular Price: " + currentData.regular_price :<></>}</span></div> <div className='pe-2'><button id='AddBtn' className='btn border fw-bold plubtn d-inline px-3 px-lg-3 text-white' onClick={(e,BtnIndex) => addToCart({ item_id: currentData.id, item_name: currentData.name, item_price: currentData.price, item_qty: currentData.qty, item_image: currentData.images.map(e => e.src), event: e, button:BtnIndex , ContainerIndex:index })}>{buttonText}</button></div></div>
                           <div className='d-flex  justify-content-between'></div>
                           <div className='position-absolute top-100 start-50 translate-middle'>
                               {/* {chageFoodItems === true ?  <FdItemIncrSamecart  setChageFoodItems={setChageFoodItems}/> : <></>}  */}

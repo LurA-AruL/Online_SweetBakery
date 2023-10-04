@@ -10,7 +10,7 @@ const SkeletonCard = () => {
   return (
     <>
     {items.map((e,i) => (  
-        <div className="custom-card col-3 my-lg-1 SkeletonDisMovie" style={{ width: '17rem'}}>
+        <div className="custom-card col-3 my-lg-1 SkeletonDisMovie" style={{ width: '17rem'}} key={i}>
         <div className='skeleton_image'>
           <Skeleton height={100} width={'100%'} className="card-img-top skeleton "  />
         </div>

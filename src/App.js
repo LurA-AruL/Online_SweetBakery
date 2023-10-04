@@ -9,7 +9,7 @@ import Portfolio from './pages/Portfolio';
 
 
 function App() {
-const [cartCounting,setcartCounting] = useState();
+const [cartCounting,setcartCounting] = useState(0);
 const [activeIcon, setActiveIcon] = useState(''); // Initialize the activeIcon state
  
 
@@ -105,7 +105,7 @@ const cartItems = (cardItemValue) => {
 
         </div>
       <Routes>
-        <Route path='/' element={<Home   inputRef={childInputRef} />} />
+        <Route path='/' element={<Home   inputRef={childInputRef}  cartItems={cartItems}/>} />
         <Route path='/Cart' element={<Cart cartreciveFun={cartItems} />} />
         <Route path='/WishList' element={<WishList />} />
         <Route path='/portfolio' element={<Portfolio />} />

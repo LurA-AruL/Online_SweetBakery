@@ -8,5 +8,29 @@
     background-color: var(--main-bg-color);
 }
 .cartAreaItems{
+    background-color: rgba(128, 0, 128, 0.044);
     height: 89vh;
+}
+
+@media only screen  and (max-width:992px) and (min-width:0) {
+.cartAreaItemsOuter{
+    width: 100% !important;
+}
+.cartFooterWrapper{
+    height: 0vh;
+    color: white;
+    background-color: var(--main-bg-color);
+}
+.cartAreaItems{
+    background-color: white;
+    min-height: 100vh;
+}
+.cartFooterWrapperMoblie{
+    background-color: var(--main-bg-color);
+    bottom: 10% !important;
+}
+
+.totalText{
+    font-size: 8pt;
+}
 }

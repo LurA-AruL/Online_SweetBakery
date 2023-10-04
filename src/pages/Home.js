@@ -6,7 +6,7 @@ import axios from 'axios';
 
 
 
-export default function Home({inputRef}) {
+export default function Home({inputRef,cartItems}) {
 
   // const api = "http://localhost:5000/comments";
 
@@ -20,6 +20,9 @@ export default function Home({inputRef}) {
 
   //--------------- search button refference-----------------
   // const inputRef = useRef(null);
+
+   // change button text
+   const [buttonText, setButtonText] = useState('Add');
 
   // -------------------- add to carts animation in css -----------------------
     const [isClicked, setIsClicked] = useState(false);
@@ -77,6 +80,7 @@ export default function Home({inputRef}) {
   //  ------------------------------ Adding Cart Total Amount and values --------------------------------------
 
   function sumTotal(arrNumber) {
+    cartItems(cart.length)
     return arrNumber.reduce((acc, currentValue) => acc + currentValue, 0);
 
   }
@@ -112,12 +116,14 @@ const updateCart = (updatedCart) => {
       const updatedCart = [...cart];
       updatedCart[existingItemIndex].item_qty += 1;
       updateCart(updatedCart);
+
     } else {
       // Item is not in the cart, add it
       const updatedCart = [...cart, { ...item, item_qty: 1 }];
       updateCart(updatedCart);
     }
     handleClick();
+
   };
 
   // ---------------------------------- Aside Carts items Removing function here --------------------------------   
@@ -187,7 +193,7 @@ const updateCart = (updatedCart) => {
 
           {/*------------------------------------- The Available cart Item Displays components here---------------------  */}
           <div className='d-flex gap-2 flex-wrap py-2 card_Main position-relative'>
-            <ShoppingCart Cartdetails={cart} addToCart={addToCart} removeFromCart={removeFromCart} formattedAmountSendToMb={formattedAmount} filteredData ={filteredData} itemsSearchValue={itemsSearch}/>
+            <ShoppingCart Cartdetails={cart} addToCart={addToCart} removeFromCart={removeFromCart} formattedAmountSendToMb={formattedAmount} filteredData ={filteredData} itemsSearchValue={itemsSearch} buttonText={buttonText}/>
           </div>
 
         {/*------------------------------------- The Main Session to be end.... ---------------------  */}
