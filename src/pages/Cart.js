@@ -116,7 +116,7 @@ export default function Cart({cartreciveFun}) {
       </div> :
 
       <div className='row w-100'>
-        <div className='col-lg-8 d-none d-lg-block text-center'><div className='w-75  m-auto'><Delivery /></div></div>
+        <div className='col-lg-8 d-none d-lg-block '><div className='w-75  m-auto'><Delivery /></div></div>
         <div className='col-12 col-lg-4 position-relative'>
         <div className='d-flex flex-column px-3 overflow-auto cartAreaItems pt-4'>
                 {/* {cart.length} */}
