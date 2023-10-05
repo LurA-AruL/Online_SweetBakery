@@ -1,9 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,500;1,400&family=Rubik+Glitch&display=swap');
-html,body{
-  font-family: 'Poppins', sans-serif;
-  font-family: 'Rubik Glitch', cursive;
-}
+
 :root {
   --main-bg-color:  purple;  /* Define a global background color variable */
   --text-color: purple;

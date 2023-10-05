@@ -21,7 +21,7 @@ export default function Cart({cartreciveFun}) {
 
   function sumTotal(arrNumber) {
     cartreciveFun(getData.length);
-    console.log(getData.length,"cart length");
+    // console.log(getData.length,"cart length");
     return arrNumber.reduce((acc, currentValue) => acc + currentValue, 0);
 
   }
@@ -116,15 +116,21 @@ export default function Cart({cartreciveFun}) {
       </div> :
 
       <div className='row w-100'>
-        <div className='col-lg-8 d-none d-lg-block '><div className='w-75  m-auto'><Delivery /></div></div>
-        <div className='col-12 col-lg-4 position-relative'>
+        <div className='col-lg-7 d-none d-lg-block pt-lg-4 border '>
+            <div className='w-75 m-auto '>
+            <p className='mt-2 fw-bold fs-3'>How Would You Like Your Order? </p>
+            <p className='mt-2 cart_CUSTOMIZE_Text'>Choose <span className='CartDeliveryOptionText'>Pickup</span> or <span className='CartDeliveryOptionText'>Delivery</span> to suit your convenience.</p>
+              <Delivery />
+            </div>
+        </div>
+        <div className='col-12 col-lg-4 position-relative'> 
         <div className='d-flex flex-column px-3 overflow-auto cartAreaItems pt-4'>
-        <div className='my-order w-100 fs-6 fw-bold ps-4 py-3 d-flex align-items-center'><div className='OrderOption'><img src='assests/ordericon.png' className='w-100' alt='no image found' /></div><div className='ps-1'>Your Order</div></div>
+        <div className='my-order w-100 fs-6 fw-bold py-3 d-flex align-items-center'><div className='OrderOption'><img src='assests/ordericon.png' className='w-100' alt='no image found' /></div><div className='ps-1'>Your Order</div></div>
                 {/* {cart.length} */}
                 {getData.map((e, index) => (
-                    <div className="card border-0 mb-2 cartAreaItemsOuter " style={{ maxWidth: 100 + "%" }} key={index}>
+                    <div className="card border-0 mb-2 cartAreaItemsOuter shadow" style={{ maxWidth: 100 + "%" }} key={index}>
                       <div className="row px-3 cartAreaItemsInner">
-                        <div className="col-md-4 col-4 rounded text-start cartAreaItemsOuter_div p-0" >
+                        <div className="col-md-4 col-4 rounded text-start cartAreaItemsOuter_div py-2 px-1" >
                           <img src={e.item_image} className="img-fluid rounded cartAreaItemsOuter_img" alt="no image found" />
                         </div>
                         <div className="col-md-8 col-7">
@@ -140,7 +146,7 @@ export default function Cart({cartreciveFun}) {
                               </span>
                               </div>
                             </div>
-                            <div className='mt-1'>
+                            <div className='mt-3'>
                               {getData.map((item, index) => (
                                 <div key={index} className='d-flex gap-3 align-item-center '>
                                   {item.item_id == e.item_id ? <>

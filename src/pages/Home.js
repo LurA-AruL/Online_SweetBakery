@@ -60,6 +60,7 @@ export default function Home({inputRef,cartItems}) {
   
   // ------------------ filter carts items -----------------------
   const handleSearch = (event) => {
+    
     const inputvalueGet = event;
     setItemsSearch(inputvalueGet); 
         
@@ -73,9 +74,6 @@ export default function Home({inputRef,cartItems}) {
   }; 
 
   //-------------------------------- increase cart values 
-
-
-
 
   //  ------------------------------ Adding Cart Total Amount and values --------------------------------------
 
